@@ -17,9 +17,9 @@ Jeweler::Tasks.new do |gem|
   gem.name = "za-id-validator"
   gem.homepage = "http://github.com/craigp/za-id-validator"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "craigp@onnata.com"
+  gem.summary = %Q{Validates South African identity numbers}
+  gem.description = %Q{Validates South African identity numbers}
+  gem.email = "darksavant@gmail.com"
   gem.authors = ["Craig Paterson"]
   # dependencies defined in Gemfile
 end
