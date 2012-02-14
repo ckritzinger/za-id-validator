@@ -26,7 +26,8 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/za-id-validator.rb",
     "test/helper.rb",
-    "test/test_za-id-validator.rb"
+    "test/test_za-id-validator.rb",
+    "za-id-validator.gemspec"
   ]
   s.homepage = %q{http://github.com/craigp/za-id-validator}
   s.licenses = ["MIT"]
