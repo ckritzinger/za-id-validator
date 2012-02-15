@@ -37,6 +37,22 @@ class TestZaIdValidator < Test::Unit::TestCase
       assert_equal 7, z(@valid)
     end
 
+    should "be a valid ID number" do
+      assert valid_za_identity_number?(@valid)
+    end
+
+  end
+
+  context "an invalid ID number" do
+
+    setup do
+      @invalid = "8001015009086"
+    end
+
+    should "not be a valid ID number" do
+      assert !valid_za_identity_number?(@invalid)
+    end
+
   end
 
 end

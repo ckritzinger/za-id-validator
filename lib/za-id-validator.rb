@@ -1,7 +1,7 @@
 module ZaIdValidator
 
-  def validate_za_identity_number?(id)
-    length_is_valid?
+  def valid_za_identity_number?(id)
+    length_is_valid?(id) && id.to_s.chars.to_a.last.to_i == z(id)
   end
 
   def length_is_valid?(id)
