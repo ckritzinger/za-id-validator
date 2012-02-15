@@ -11,6 +11,7 @@ class TestZaIdValidator < Test::Unit::TestCase
 
     setup do
       @valid = "8001015009087"
+      @valid_integer = 8001015009087
     end
 
     should "be the correct length" do
@@ -38,7 +39,15 @@ class TestZaIdValidator < Test::Unit::TestCase
     end
 
     should "be a valid ID number" do
-      assert valid_za_identity_number?(@valid)
+      result = valid_za_identity_number?(@valid)
+      assert_not_nil(result)
+      assert(result)
+    end
+
+    should "be a valid ID number (when passed as an int)" do
+      result = valid_za_identity_number?(@valid_integer)
+      assert_not_nil(result)
+      assert(result)
     end
 
   end
@@ -50,7 +59,30 @@ class TestZaIdValidator < Test::Unit::TestCase
     end
 
     should "not be a valid ID number" do
-      assert !valid_za_identity_number?(@invalid)
+      result = valid_za_identity_number?(@invalid)
+      assert_not_nil(result)
+      assert(!result)
+    end
+
+  end
+
+  context "an ID number that is too long" do
+
+    setup do
+      @too_long = "80010150090871"
+      @too_long_integer = 80010150090871
+    end
+
+    should "not be a valid ID number" do
+      result = valid_za_identity_number?(@too_long)
+      assert_not_nil(result)
+      assert(!result)
+    end
+
+    should "not be a valid ID number (when passed as an int)" do
+      result = valid_za_identity_number?(@too_long_integer)
+      assert_not_nil(result)
+      assert(!result)
     end
 
   end
