@@ -3,7 +3,7 @@ module ZaIdValidator
   def valid_za_identity_number?(id)
     id = id.to_s # force to a string
     return false unless length_is_valid?(id)
-    id.chars.to_a.last.to_i == z(id)
+    id.chars.to_a.last == z(id).to_s[-1]
   end
 
   private

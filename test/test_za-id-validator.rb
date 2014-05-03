@@ -13,12 +13,9 @@ class TestZaIdValidator < Test::Unit::TestCase
       @valid_integer = 8001015009087
       @valid = "8001015009087"
     end
-    valid_numbers = ["8001015009087",'8811105212080','8001155109085',"8001015009087",
-                      "8905110047083","9206150098089","8603245260081","8603245260081",
-                      "8603245260081","8603245260081","8507095136087","8211265026083",
-                      "8211265026083","8211265026083","8211265026083","8503225111082",
-                      "8503225111082","8001155109085","8001155109085","8811105212080",
-                      "8811105212080","8001155109085"]
+    valid_numbers = ["8001015009087", "8811105212080", "8001155109085",
+                     "8905110047083", "9206150098089", "8603245260081",
+                     "8507095136087", "8211265026083", "8503225111082"]
 
     should "have the correct A sum" do
       # 8+0+0+5+0+0 = 13
@@ -40,11 +37,11 @@ class TestZaIdValidator < Test::Unit::TestCase
     end
 
     valid_numbers.each do |valid|
-      should "be the correct length" do
+      should "#{valid} be the correct length" do
         assert length_is_valid?(valid)
       end
 
-      should "be a valid ID number" do
+      should "#{valid} be a valid ID number" do
         result = valid_za_identity_number?(valid)
         assert_not_nil(result)
         assert(result)
